@@ -1,0 +1,10 @@
+<%= form_for @book, url: books_path do |f| %>
+
+  <p><%= f.label :title %></p>
+  <p><%= f.text_field :title %></p>
+  <p><%= f.label :author %></p>
+  <p><%= f.text_field :author %></p>
+
+  <%= f.submit 'Save' %>
+
+<% end %>
