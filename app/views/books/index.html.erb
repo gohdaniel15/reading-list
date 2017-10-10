@@ -1,9 +1,12 @@
+<%= link_to 'Add new book', new_book_path %>
+
 <table>
   <thead>
     <th></th>
     <th>Title</th>
     <th>Author</th>
     <th>Read</th>
+    <th></th>
   </thead>
 
   <tbody>
@@ -13,6 +16,7 @@
         <td><%= book.title %></td>
         <td><%= book.author %></td>
         <td><%= book.read %></td>
+        <td><%= link_to 'Edit details', edit_book_path(book) %></td>
       </tr>
     <% end %>
   </tbody>
