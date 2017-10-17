@@ -19,6 +19,11 @@
         <td><%= book.title %></td>
         <td><%= book.author %></td>
         <td><%= book.read %></td>
+        <% if book.read %>
+          <td><%= link_to 'Mark as unread', unread_book_path(book), method: :put %></td>
+        <% else %>
+          <td><%= link_to 'Mark as read', read_book_path(book), method: :put %></td>
+        <% end %>
         <td><%= link_to 'Edit details', edit_book_path(book) %></td>
         <td><%= link_to 'Delete', book_path(book), method: :delete %></td>
       </tr>

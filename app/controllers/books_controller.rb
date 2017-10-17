@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  before_action :prepare_book, only: [:edit, :update, :destroy]
+  before_action :prepare_book, only: [:edit, :update, :destroy, :read, :unread]
 
   def index
     @books = Book.all
@@ -31,6 +31,16 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
+    redirect_to books_path
+  end
+
+  def read
+    @book.update(read: true)
+    redirect_to books_path
+  end
+
+  def unread
+    @book.update(read: false)
     redirect_to books_path
   end
 
