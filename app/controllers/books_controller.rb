@@ -11,6 +11,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    byebug
     @book = Book.new(books_params)
     if @book.save
       redirect_to books_path

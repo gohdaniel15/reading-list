@@ -1,0 +1,8 @@
+<%= simple_form_for @book.bookmarks.build, url: book_bookmarks_path(@book), method: :post do |f| %>
+
+  <%= f.input :page_number %>
+  <%= f.input :description %>
+
+  <%= f.button :submit %>
+
+<% end %>
