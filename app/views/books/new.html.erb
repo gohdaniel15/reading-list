@@ -5,6 +5,18 @@
   <p><%= f.label :author %></p>
   <p><%= f.text_field :author %></p>
 
+  <p>Add a bookmark?</p>
+
+  <%= f.fields_for :bookmarks, @book.bookmarks.build do |ff| %>
+
+    <p><%= ff.label :page_number %></p>
+    <p><%= ff.text_field :page_number %></p>
+
+    <p><%= ff.label :description %></p>
+    <p><%= ff.text_field :description %></p>
+
+  <% end %>
+
   <%= f.submit 'Save' %>
 
 <% end %>

@@ -11,7 +11,6 @@ class BooksController < ApplicationController
   end
 
   def create
-    byebug
     @book = Book.new(books_params)
     if @book.save
       redirect_to books_path
@@ -48,7 +47,7 @@ class BooksController < ApplicationController
   private
 
   def books_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author, bookmarks_attributes: [:page_number, :description])
   end
 
   def prepare_book
